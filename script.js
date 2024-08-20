@@ -33,20 +33,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme switcher
   const themeSwitcher = document.getElementById("theme-switcher");
+  const themeIcon = document.getElementById("theme-icon");
   const body = document.body;
 
   // Check for saved theme preference
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark-mode");
+    themeIcon.className = "fas fa-sun";
+    document.querySelector("h2").classList.add("dark-mode");
   }
 
   themeSwitcher.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
-    localStorage.setItem(
-      "theme",
-      body.classList.contains("dark-mode") ? "dark" : "light",
-    );
+    document.querySelector("h2").classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      themeIcon.className = "fas fa-sun";
+      localStorage.setItem("theme", "dark");
+    } else {
+      themeIcon.className = "fas fa-moon";
+      localStorage.setItem("theme", "light");
+    }
   });
 });
 
