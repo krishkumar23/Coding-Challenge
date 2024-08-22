@@ -10,21 +10,37 @@ body {
     color 0.3s;
 }
 
+/* Dark Mode Styles */
 body.dark-mode {
   background-color: #000000;
-  color: #f4f7f6 !important;
+  color: #bfbfbf;
 }
-
-.day-box.dark-mode h5.day-title {
-  color: #ffffff; /* Set day title to white */
+.dark-mode h2 {
+  color: #d3d3d3;
 }
-
-.day-box.dark-mode .task-list li {
-  color: #f4f7f6; /* Ensure list items are light */
+.dark-mode .day-title {
+  color: #a8a8a8;
 }
-
-.day-box.dark-mode label {
-  color: #f4f7f6 !important; /* Ensure labels are light */
+.dark-mode .day-box {
+  background-color: #333333;
+}
+.dark-mode .task-list li {
+  color: #ffffff;
+}
+.dark-mode .checkbox:checked + label {
+  color: #7f8c8d;
+}
+.dark-mode label {
+  color: #bfbfbf;
+}
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .container {
@@ -44,12 +60,6 @@ body.dark-mode {
   transition: transform 0.3s ease;
 }
 
-.day-box.dark-mode {
-  background-color: #1c1c1c;
-  color: #f4f7f6;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-}
-
 .day-box:hover {
   transform: translateY(-5px);
 }
@@ -59,15 +69,6 @@ h2 {
   color: #2c3e50;
   text-align: center;
   margin-bottom: 40px;
-}
-
-h2.dark-mode {
-  color: #ffffff;
-}
-
-.task-list {
-  list-style-type: none;
-  padding-left: 0;
 }
 
 .task-list li {
@@ -86,6 +87,7 @@ h2.dark-mode {
 
 label {
   cursor: pointer;
+  color: #333;
 }
 
 .row {
@@ -105,6 +107,11 @@ label {
 .day-title {
   font-weight: bold;
   font-size: 1.4rem;
+}
+
+.task-list {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 @media (max-width: 768px) {
